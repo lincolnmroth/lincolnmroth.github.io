@@ -1,6 +1,124 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Lincoln Roth | Firmware Engineer</title>
+<style>
+    /* Basic Reset */
+    body, h1, h2, p, a, img { margin: 0; padding: 0; box-sizing: border-box; }
 
+    /* Styling the Body and Fonts */
+    body { font-family: 'Arial', sans-serif; background-color: #f4f4f4; color: #333; line-height: 1.6; padding: 0 20px; }
+
+    /* Header Styling */
+    header { background: #005288; color: #fff; text-align: center; padding: 20px 0; }
+    header h1 { margin-bottom: 5px; }
+    header p { font-size: 18px; margin-top: 0; }
+
+    /* Navigation Styling */
+    nav { text-align: center; background: #03396c; padding: 10px 0; }
+    nav a { color: #fff; text-decoration: none; font-size: 16px; margin: 0 15px; }
+    nav a:hover { color: #a8dadc; }
+
+    /* Section Styling */
+    section { padding: 20px; margin-top: 20px; background: white; box-shadow: 0 2px 4px rgba(0,0,0,0.1); margin-left: 10px; margin-right: 10px; }
+
+    /* Project Items Styling */
+    .project {
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+        margin-bottom: 20px;
+        overflow: auto; /* Fixes floating image issue */
+    }
+    .project:last-child { border-bottom: none; }
+    .project img {
+        float: left;
+        margin-right: 15px;
+        width: 150px; /* Adjust as necessary */
+        height: auto;
+    }
+    .project-title { font-size: 18px; color: #005288; }
+    .project-desc { margin-top: 5px; }
+
+    /* Footer Styling */
+    footer { text-align: center; padding: 20px 0; background: #021f30; color: #fff; }
+</style>
+</head>
 <body>
-    <p>Updates in progress! Check out my <a href="https://lincolnroth.com/resume.pdf">resume </a> while you're waiting!</p>
+<header>
+    <h1>Lincoln M. Roth</h1>
+    <p>Firmware Engineer | Hardware and Deep Tech Specialist</p>
+</header>
+<nav>
+    <a href="#about">About</a>
+    <a href="#experience">Experience</a>
+    <a href="#projects">Projects</a>
+    <a href="#contact">Contact</a>
+</nav>
+<section id="about">
+    <h2 style="text-align: center;">About Me</h2>
+    <p style="text-align: center;">Hi there 👋</br></p><p>
+        I'm Lincoln, a full-stack robotics engineer, and I love making excellent software for hardware. I have experience covering the entire stack of hardware development, from Mechanical to Electrical to Firmware/Software engineering, allowing me to fully understand the system and solve problems in the most optimal and nuanced way possible. I am especially passionate about robotics, climate tech, and medtech.</br>
+         I'm currently a Firmware Engineer at Second Order Effects, an Engineering Consultancy, where I've done work for clients in many different industries including green energy (fusion!), satellites, medical devices, and rockets.
+        I've previously worked for ASML (makes the machines that make basically all the semiconductors in the world!) as a mechantronics intern where I worked on optimization robot arms and also I've worked on CircuitPython through the MLH Fellowship.
+    </br>    </br>
+
+        I studied Mechanical Engineering and Computer Science and have years of experience in the mechatronics/hardware development space covering mechanical, electrical, firmware and software engineering. Here are some of the cool things I've built and worked on (all non-work related):
+    </br>
+
+    <ul>
+        <li>Path-optimization to avoid impact of vibration on robot arms</li>
+        <li>Small-scale simulation environment for self driving cars</li>
+        <li>CUDA accelerated CFD for flapping robot simulations</li>
+        <li>Live coding on microcontrollers over BLE</li>
+        <li>Solar Powered Race Car - I was the Mechanical lead for my universities solar car team</li>
+        <li>Autonomous firefighting robots</li>
+        <li>3D-Printed 3D-Printer based on an h-bot style kinematics platform (shout out to the whole RepRap movement!)</li>
+        <li>Custom high torque density actuators for a quadruped (the quadruped part is still in progress)</li>
+        <li>Strobrscope - iOS app that uses a dynamically-varied framerate to visibly measure frequency</li>
+        <li>many many robot arms, electric vehicles, random tiny projects i've forgotten about</li>
+    </ul>
+        </p>
+
+    <h2>More detailed information of my professional experience can be found in my <a href="https://lincolnroth.com/resume.pdf">resume</a></h2>
+</section>
+
+<section id="projects">
+    <h2>Select Projects</h2>
+    <div class="project">
+        <img src="assets/ogrebot.png" alt="ogrebot">
+        <h3 class="project-title">Firefighting Robot</h3>
+        <p class="project-desc"> Built an autonomous maze-solving candle-extinguishing robot for the Trinity International Robotics Contest. Developed custom servos and control algorithms with precise odometry. Used a 2D lidar and highly-performant and custom-built SLAM algorithms running on a low power embedded linux platform. </p>
+        <h4> What I learned/tried for the first time:</h4>
+        <ul>
+            <li>This was one of the first projects I worked on that was was severely compute limited, forcing me to learn and fully utilize every aspect of the tech stack. From custom linux daemons to optimizing the high level algorithms, this project really taught made me fall in love in the art of firmware engineering and optimizing every aspect possible throughout the system. </li>
+            <li>The importance of repairability. Clean and manageable harnessing is not just for looks, the extra time and effort was an extremely worthwhile investment. </li>
+            <li>This was my first time messing around with buildroot for creating embedded linux images as well as my first major project using ROS.</li>
+            <li>First time I had to implement an FFT in C! I had not learned the math yet in school, so going from what I thought was basically black magic to functioning code was really fun.</li>
+        </ul>
+    </div>
+
+    <div class="project">
+        <img src="assets/superservo.png" alt="superservo">
+        <h3 class="project-title">Low-Cost, High Torque Density Robotics Actuator</h3>
+        <p class="project-desc">Designed and built a high-torque density custom servomotor specifically designed for rapid robotics development. Used hobby BLDC motors in a quasi-direct drive setup paired with a high power motor control platform and FOC control. Allowed for very fast, high precision motion, in a modular form factor greatly reducing the needed work on many other projects.</h4>
+        <ul>
+            <li>Lots of fun control design and implementation! I love me some sims! I learned <a href="https://julialang.org/">Julia</a> and created a full simulation model of the motor and algorithms.</li>
+            <li>FOC is sick, super cool algorithms, enjoyed learning about it </li>
+            <li>Designing gears is easy. Manufacturing them is really hard and expensive. Designing around COTS gears is super annoying. Gears are hard.</li>
+            <li>Distributing large amounts of power on a PCB is not fun. Layout is the worst.</li>
+        </ul>
+        <h6>Picture is not mine! Lost the CAD :( </h6>
+
+    </div>
+    <h2>More to come! (once i have some time to document them...)</h2>
+</section>
+<section id="contact">
+    <h2>Contact</h2>
+    <p>Email: lincolnmroth@gmail.com</p>
+    <p>LinkedIn: <a href="http://linkedin.com/in/lincoln-roth">lincoln-roth</a></p>
+    <p>GitHub: <a href="http://github.com/lincolnmroth">lincolnmroth</a></p>
+</section>
 </body>
 </html>
